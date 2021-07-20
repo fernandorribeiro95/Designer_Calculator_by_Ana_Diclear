@@ -73,7 +73,7 @@ body {
     font-size: 0.789rem;
     height: 0.789rem;
 }
-.base_calculator .calculations input {
+.base_calculator .calculations #result {
     font-size: 3.263rem;
     font-weight: 500;
     color: var(--white);
@@ -114,8 +114,12 @@ body {
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
 }
-.base_calculator .numbers_and_formulas button:active {
+.base_calculator .numbers_and_formulas button:hover {
     box-shadow: 1px 1px 5px black;
+    border-radius: 0.355rem;
+}
+.base_calculator .numbers_and_formulas button:active {
+    box-shadow: 1px 1px 5px gray;
     border-radius: 0.355rem;
 }
 .base_calculator .numbers_and_formulas button.number {
