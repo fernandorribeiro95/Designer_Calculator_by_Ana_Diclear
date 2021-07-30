@@ -14,49 +14,49 @@
     <div class="base_calculator">
         <header>
             <nav>
-                <a>Standard</a>
+                <a class="check">Standard</a>
                 <a>Scientific</a>
             </nav>
         </header>
 
         <div class="calculations">
-            <p class="calculation_performed">45 X 8 ÷ 2</p>
+            <p class="calculation_performed"></p>
             <p type="numero" id="result"></p>
         </div>
 
         <div class="numbers_and_formulas">
-            <table>
-                <tr>
+            {# <table>
+                <tr> #}
                     <td><button class="minor_expression" onclick="clean()">C</button></td>
-                    <td><button class="minor_expression" >%</button></td>
-                    <td><button class="minor_expression" >±</button></td>
-                    <td><button class="bigger_expression" onclick="insert('/')">÷</button></td>
-                </tr>
-                <tr>
+                    <td><button class="minor_expression" onclick="insert('%')">%</button></td>
+                    <td><button class="minor_expression" onclick="invertion()">&plusmn;</button></td>
+                    <td><button class="bigger_expression" onclick="insert('&divide;')">&divide;</button></td>
+                {# </tr> #}
+                {# <tr> #}
                     <td><button class="number" onclick="insert('7')">7</button></td>
                     <td><button class="number" onclick="insert('8')">8</button></td>
-                    <td><button class="number" onclick="insert('9')">9</button></td>
-                    <td><button class="bigger_expression" onclick="insert('*')">x</button></td>
-                </tr>
-                <tr>
+                    <td><button class="number" onclick="insert('9')" value="9">9</button></td>
+                    <td><button class="bigger_expression" onclick="insert('*')">&times;</button></td>
+                {# </tr> #}
+                {# <tr> #}
                     <td><button class="number" onclick="insert('4')">4</button></td>
                     <td><button class="number" onclick="insert('5')">5</button></td>
                     <td><button class="number" onclick="insert('6')">6</button></td>
-                    <td><button class="bigger_expression" onclick="insert('-')">-</button></td>
-                </tr>
-                <tr>
+                    <td><button class="bigger_expression" onclick="insert('-')">&minus;</button></td>
+                {# </tr> #}
+                {# <tr> #}
                     <td><button class="number" onclick="insert('1')">1</button></td>
                     <td><button class="number" onclick="insert('2')">2</button></td>
                     <td><button class="number" onclick="insert('3')">3</button></td>
                     <td><button class="bigger_expression" onclick="insert('+')">+</button></td>
-                </tr>
-                <tr>
+                {# </tr> #}
+                {# <tr> #}
                     <td><button class="minor_expression" onclick="backspace()"><img src="/x-square-light.png" alt=""></button></td>
                     <td><button class="number" onclick="insert('0')">0</button></td>
-                    <td><button class="number" onclick="insert('.')">.</button></td>
+                    <td><button class="number" onclick="fracion('.')">&sdot;</button></td>
                     <td><button class="bigger_expression result" onclick="calculate()">=</button></td>
-                </tr>
-            </table>
+                {# </tr> #}
+            {# </table> #}
         </div>
 
     </div>
