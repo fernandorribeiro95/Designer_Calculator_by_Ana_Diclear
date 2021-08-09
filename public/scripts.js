@@ -1,6 +1,8 @@
 const calcResult = document.getElementById('result')
 const buttons = document.querySelectorAll('button')
 
+const operators = ['+', '-', '×', '÷', '%']
+
 
 function clean() {
     calcResult.innerHTML = ""
@@ -10,6 +12,7 @@ function insert(digit) {
     if(calcResult == 0) {
         clean()
     }
+
     let currentData = calcResult.innerHTML
     calcResult.innerHTML = currentData + digit
 }
@@ -19,33 +22,50 @@ function backspace() {
     calcResult.innerHTML = back.substring(0, back.length -1)
 }
 
-function operations(result) {
-    if(result.includes("×")) {
-        let realCalculation = ""
-        let operation = "*"
-        let indexMultiplication = result.indexOf('×')
-        realCalculation = result.splice(indexMultiplication, 1, "*")
-        return realCalculation
-    } else if(result.includes("÷")) {
-        let operation = "/"
-        let indexDivision = result.indexOf("÷")
-        realCalculation = result.splice(indexDivision, 1, "/")
-        return realCalculation
-    } return 
-}
-
 function calculate() {
     let result = calcResult.innerHTML
+    let resultAt = ""
+
+    let operatorTrue = false
+
     let calculation_performed = document.querySelector('.calculation_performed')
+
+
+    if(result == 0 ) {
+        return
+    } else if(result.includes('+')) {
+        operatorTrue = true
+        resultAt = result
+    } else if(result.includes('-')) {
+        operatorTrue = true
+        resultAt = result
+    } else if(result.includes('×')) {
+        operatorTrue = true
+        let operadorPosition = result.indexOf('×')
+        let arrayResultAt = result.split('')
+        arrayResultAt.splice(operadorPosition, 1, '*')
+        resultAt = arrayResultAt.join('')
+    } else if(result.includes('÷')) {
+        operatorTrue = true
+        let operadorPosition = result.indexOf('÷')
+        let arrayResultAt = result.split('')
+        arrayResultAt.splice(operadorPosition, 1, '/')
+        resultAt = arrayResultAt.join('')
+    } else if(result.includes('%')) {
+        operatorTrue = true
+    } else {
+        return
+    }
+
+    if(operatorTrue == false) return
     calculation_performed.innerHTML = result
 
-    let realCalculation = ""
-    operations(result)
-
-    if(result) {
-        calcResult.innerHTML = eval(result)
+    if(operatorTrue == false) {
+        return
+    }   else {
+        return calcResult.innerHTML = eval(resultAt)
     }
-    calcResult.innerHTML 
+    
 }
 
 function invertion() {
